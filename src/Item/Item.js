@@ -12,10 +12,12 @@ class Item extends Component{
   }
 
   renderItemsList = () => {
-    const items = [...this.state.items]
-    const item = this.refs.myInput.value
-    items.push(item)
-    this.setState({items: items})
+    if(this.refs.myInput.value !== ""){   
+      const items = [...this.state.items]
+      const item = this.refs.myInput.value
+      items.push(item)
+      this.setState({items: items})
+    }
     this.refs.myInput.focus()
     this.refs.myInput.value = ""
   }
